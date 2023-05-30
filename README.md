@@ -7,12 +7,12 @@ A few of the fields are also nominal which are annoying, and I used one-hot enco
 
 ## Approach
 
-I applied classical statistics approach while my colleague applied XGBoost approach.
+I applied classical statistics approach while my colleague used XGBoost.
 
 - I used an ensemble, partition the data set so the fraud/non-fraud are roughly 1:1 ratio (by sampling the fraud set and non-fraud set).
 - Preprocessing: I first normalized the numerical dimensions with standard scaler, and append the one-hot vectors of nominal fields.
 - Feature Extraction: I used PCA (also tried LDA later which gets better confusion matrix scores but I can't find the code now).
-- Training: I tried logistic regression, svm, gradient boost with many hyperparameter setups.
+- Training: I tried logistic regression, svm, gradient boost with many hyperparameter setups. In hindsight I should have used F1 scoring because it gives best description of TP/FP/TN/FN.
 - Validation: reserved a small test data set. Then check the confusion matrix.
 
 ## Results
